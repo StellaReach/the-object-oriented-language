@@ -1,0 +1,28 @@
+import org.junit.Test;
+
+public class CurrencyConverter {
+    
+    private static final double YEN_TO_DOLLAR = 130.90;
+    
+    public double yenToDollar(double yen) {
+        return yen / YEN_TO_DOLLAR;
+    }
+    
+    public double dollarToYen(double dollar) {
+        return dollar * YEN_TO_DOLLAR;
+    }
+    
+    @Test
+    public void testYenToDollar() {
+        CurrencyConverter converter = new CurrencyConverter();
+        double result = converter.yenToDollar(1000);
+        assertEquals(7.63, result, 0.01);
+    }
+    
+    @Test
+    public void testDollarToYen() {
+        CurrencyConverter converter = new CurrencyConverter();
+        double result = converter.dollarToYen(10);
+        assertEquals(1309.0, result, 0.01);
+    }
+}
